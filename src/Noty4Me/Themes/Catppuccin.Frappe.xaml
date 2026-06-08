@@ -1,0 +1,32 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Color x:Key="Cat.Rosewater">#f2d5cf</Color>
+    <Color x:Key="Cat.Flamingo">#eebebe</Color>
+    <Color x:Key="Cat.Pink">#f4b8e4</Color>
+    <Color x:Key="Cat.Mauve">#ca9ee6</Color>
+    <Color x:Key="Cat.Red">#e78284</Color>
+    <Color x:Key="Cat.Maroon">#ea999c</Color>
+    <Color x:Key="Cat.Peach">#ef9f76</Color>
+    <Color x:Key="Cat.Yellow">#e5c890</Color>
+    <Color x:Key="Cat.Green">#a6d189</Color>
+    <Color x:Key="Cat.Teal">#81c8be</Color>
+    <Color x:Key="Cat.Sky">#99d1db</Color>
+    <Color x:Key="Cat.Sapphire">#85c1dc</Color>
+    <Color x:Key="Cat.Blue">#8caaee</Color>
+    <Color x:Key="Cat.Lavender">#babbf1</Color>
+
+    <Color x:Key="Cat.Text">#c6d0f5</Color>
+    <Color x:Key="Cat.Subtext1">#b5bfe2</Color>
+    <Color x:Key="Cat.Subtext0">#a5adce</Color>
+    <Color x:Key="Cat.Overlay2">#949cbb</Color>
+    <Color x:Key="Cat.Overlay1">#838ba7</Color>
+    <Color x:Key="Cat.Overlay0">#737994</Color>
+    <Color x:Key="Cat.Surface2">#626880</Color>
+    <Color x:Key="Cat.Surface1">#51576d</Color>
+    <Color x:Key="Cat.Surface0">#414559</Color>
+    <Color x:Key="Cat.Base">#303446</Color>
+    <Color x:Key="Cat.Mantle">#292c3c</Color>
+    <Color x:Key="Cat.Crust">#232634</Color>
+
+</ResourceDictionary>

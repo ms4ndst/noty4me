@@ -1,0 +1,55 @@
+<Window x:Class="Noty4Me.UI.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Noty4Me — Settings"
+        Width="460" Height="420"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        Background="{DynamicResource Brush.Mantle}"
+        Foreground="{DynamicResource Brush.Text}"
+        FontFamily="Segoe UI" FontSize="13"
+        TextOptions.TextFormattingMode="Display">
+    <Border Margin="16" Padding="20"
+            Background="{DynamicResource Brush.Base}"
+            BorderBrush="{DynamicResource Brush.Surface0}"
+            BorderThickness="1" CornerRadius="10">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Text="Appearance"
+                       Foreground="{DynamicResource Brush.Text}"
+                       FontSize="17" FontWeight="SemiBold" Margin="0,0,0,16"/>
+
+            <Label Grid.Row="1" Content="Theme flavor"/>
+            <ComboBox Grid.Row="2" x:Name="FlavorBox" Margin="0,4,0,14" SelectionChanged="OnFlavorChanged"/>
+
+            <Label Grid.Row="3" Content="Accent color"/>
+            <ComboBox Grid.Row="4" x:Name="AccentBox" Margin="0,4,0,14" SelectionChanged="OnAccentChanged"/>
+
+            <StackPanel Grid.Row="5" Orientation="Vertical" Margin="0,8,0,0">
+                <CheckBox x:Name="StartWithWinChk" Content="Start with Windows"
+                          Margin="0,0,0,8"
+                          Checked="OnStartWithWinChanged" Unchecked="OnStartWithWinChanged"/>
+                <CheckBox x:Name="StartMinChk" Content="Start minimized to tray"
+                          Checked="OnStartMinChanged" Unchecked="OnStartMinChanged"/>
+                <TextBlock Margin="0,18,0,0"
+                           Foreground="{DynamicResource Brush.Subtext1}" FontSize="11"
+                           TextWrapping="Wrap">
+                    Theme: Catppuccin — Latte (light), Frappé, Macchiato, Mocha (dark). Pick any accent. Changes apply instantly.
+                </TextBlock>
+            </StackPanel>
+
+            <StackPanel Grid.Row="6" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,16,0,0">
+                <Button Content="Close" Click="OnClose" Style="{StaticResource AccentButton}" MinWidth="80"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>
