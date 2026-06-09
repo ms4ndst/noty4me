@@ -45,13 +45,16 @@ Requires the .NET 10 SDK. Target framework is `net10.0-windows10.0.19041.0` (Win
 Requires the Windows 10/11 SDK on PATH (`MakeAppx.exe`, `SignTool.exe`). The build script auto-locates them under `C:\Program Files (x86)\Windows Kits\10\bin` if they aren't on PATH.
 
 ```powershell
-# 1. Generate a dev signing cert (CN=Noty4Me Dev). Default password: Noty4Me-dev.
-#    Override: .\packaging\make-cert.ps1 -Password (Read-Host -AsSecureString)
+# 1. Generate a dev signing cert (CN=Noty4Me Dev). You will be prompted for a
+#    password to protect the .pfx. Pass -Password (SecureString) to skip the prompt.
 .\packaging\make-cert.ps1
 
-# 2. Publish, pack, sign.
+# 2. Publish, pack, sign. You will be prompted for the .pfx password
+#    (must match what you used in step 1).
 .\packaging\build-msix.ps1
 ```
+
+Both scripts require an interactive password by design — no defaults — so the `.pfx` is never protected by a secret that lives in source control. `Noty4Me.pfx` and `Noty4Me.cer` themselves are gitignored.
 
 Output: `packaging\out\Noty4Me_<version>_x64.msix` (the filename is read from `AppxManifest.xml`'s `Version`).
 

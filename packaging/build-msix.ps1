@@ -19,8 +19,10 @@ param(
 
 $ErrorActionPreference = 'Stop'
 
-if (-not $Password) {
-    $Password = ConvertTo-SecureString -String 'Noty4Me-dev' -Force -AsPlainText
+if (-not $Password -and -not $SkipSign) {
+    Write-Host "No -Password provided. Enter the .pfx password (will not echo):"
+    $Password = Read-Host -AsSecureString
+    if ($Password.Length -eq 0) { throw "Password is required for signing. Use -SkipSign to build unsigned." }
 }
 
 function Find-SdkTool([string]$tool) {

@@ -11,8 +11,9 @@ param(
 )
 
 if (-not $Password) {
-    $Password = ConvertTo-SecureString -String 'Noty4Me-dev' -Force -AsPlainText
-    Write-Host "Using default dev password 'Noty4Me-dev' (pass -Password to override)."
+    Write-Host "No -Password provided. Enter a password to protect the .pfx (it will not echo):"
+    $Password = Read-Host -AsSecureString
+    if ($Password.Length -eq 0) { throw "Password is required." }
 }
 
 Write-Host "Creating self-signed cert with Subject: $Subject"
